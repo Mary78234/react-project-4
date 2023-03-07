@@ -11,6 +11,22 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
+  //runs everytime this component runs or is mounted
+  // useEffect(() => {
+  //   console.log("EFFECT RUNNING");
+  // });
+  // }, []); with this it runs only the fist time
+  // }, [enteredPassword]); runs every time psw changes
+
+  // 'EFFECT RUNNING' in first running cicle
+  //  at every change of psw 'CLEANUP EFFECT' runs, then it runs 'EFFECT RUNNING'
+  // return() => { console.log("CLEANUP EFFECT");}
+  // }, [enteredPassword]);
+
+  // 'EFFECT RUNNING' runs only unce, and cleanup runs only when we the component is removed from the dom
+  // return() => { console.log("CLEANUP EFFECT");}
+  // }, []);
+
   useEffect(() => {
     const identifier = setTimeout(() => {
       console.log("checking form validity");
